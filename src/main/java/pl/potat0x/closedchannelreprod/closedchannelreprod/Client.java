@@ -9,9 +9,10 @@ import java.time.Duration;
 final class Client {
     public static void main(String[] args) {
         final RestTemplate restTemplate = new RestTemplateBuilder()
-                .setReadTimeout(Duration.ofMillis(123))
+//                .setReadTimeout(Duration.ofMillis(6))
+                .setReadTimeout(Duration.ofNanos(7500000))
                 .build();
-        final int requestsToSend = 50;
+        final int requestsToSend = 22222;
         for (int i = 1; i <= requestsToSend; i++) {
             System.out.println("request " + i + "/" + requestsToSend);
             try {
